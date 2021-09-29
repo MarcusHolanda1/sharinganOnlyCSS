@@ -27,11 +27,13 @@ body {
 }
 
 .box-eye {
-  height: 250px;
+  width: 250px;
+  height: 450px;
   display: flex;
   justify-content: center;
   align-items: center;
   position: absolute;
+  
 }
 
 .eye {
@@ -45,13 +47,18 @@ body {
   border-radius: 100% 10% 25% 36%/ 100% 2% 99% 15%;
   box-shadow: -3px 2px 1px 3px rgb(7, 7, 7) inset;
 
-   
+   margin-left: 300px;
 
   
 }
 
-.eye:hover{
-  animation: eye_animation 7s ease-in-out infinite;  
+.englobaHover{
+  width: 400px;
+  height: 300px;
+}
+
+.englobaHover:hover .eye{
+  animation: eye_animation 0.7s ease-in-out infinite;  
 }
 
 /* @keyframes eye_animation {
@@ -84,7 +91,8 @@ body {
   position: absolute;
 }
 
-.eye-inside:hover {
+.englobaHover:hover .eye-inside {
+  transition-duration: 9s;
     animation:spin 4s ease-in-out forwards;
 }
 
@@ -194,4 +202,8 @@ body {
   border-left: 12px solid black;
   border-radius: 100% 0 0 0;
   transform: rotate(470deg);
+}
+
+.left-eye{
+  transform: scaleX(-1);
 }
