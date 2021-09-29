@@ -1,7 +1,13 @@
+@font-face {
+  font-family: Naruto;
+  src: url("/src/assets/njnaruto.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
 :root {
-  --eye-red: #db0118;
-  --eye-tomoe: #000000;
-  --eye-circle: #000000;
+  --eye-sharingan: #F01E14;
+  --eye-black: #000000;
 }
 
 * {
@@ -12,14 +18,28 @@ body {
   margin: 0;
   padding: 0;
 
-  background-color: rgb(255, 255, 255);
+  background-color: #FFF;
+}
+
+h1 {
+  color: var(--eye-sharingan);
+  font-size: 70px;
+  font-family: Naruto;
+  text-align: center;
+}
+
+h3 {
+  color: var(--eye-black);
+  font-size: 14px;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
 }
 
 .container {
-  background-color: rgb(255, 255, 255);
-  max-width: 450px;
-  height: 450px;
-  margin: 50px auto;
+  background-color: #FFF;
+  width: min(90vw, 250px);
+  height: max(30vh, 250px);
+  margin: auto;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -33,11 +53,10 @@ body {
   justify-content: center;
   align-items: center;
   position: absolute;
-  
 }
 
 .eye {
-  background-color: white;
+  background-color: #FFF;
   width: 250px;
   height: 115px;
   position: absolute;
@@ -45,72 +64,58 @@ body {
   justify-content: center;
   align-items: center;
   border-radius: 100% 10% 25% 36%/ 100% 2% 99% 15%;
-  box-shadow: -3px 2px 1px 3px rgb(7, 7, 7) inset;
+  box-shadow: -3px 2px 1px 3px  var(--eye-black) inset;
 
-   margin-left: 300px;
-
-  
+  margin-left: 300px;
 }
 
-.englobaHover{
+.includesHover {
   width: 400px;
   height: 300px;
 }
 
-.englobaHover:hover .eye{
-  animation: eye_animation 0.7s ease-in-out infinite;  
+.includesHover:hover .eye {
+  animation: eye_animation 0.7s ease-in-out infinite;
 }
-
-/* @keyframes eye_animation {
-    0%, 36%, 55%, 100%{
-        height: 140px;
-        padding-top: 20px;
-    }
-    43%, 47%{
-        height: 120px;
-        padding-top: 0px;
-    }
-} */
 
 @keyframes eye_animation {
-    0%, 100%{
-        height: 160px;
-        padding-top: 20px;
-    }
+  0%,
+  100% {
+    height: 160px;
+    padding-top: 20px;
+  }
 }
 
-
 .eye-inside {
-    margin-top: 15px;
+  margin-top: 15px;
   width: 100px;
   height: 100px;
-  background-color: black;
+  background-color: var(--eye-black);
 
-  border: 3px solid var(--eye-circle);
+  border: 3px solid var(--eye-black);
   border-radius: 50%;
   position: absolute;
 }
 
-.englobaHover:hover .eye-inside {
+.includesHover:hover .eye-inside {
   transition-duration: 9s;
-    animation:spin 4s ease-in-out forwards;
+  animation: sharingan_spin 4s ease-in-out forwards;
 }
 
-@keyframes spin {
-    0% {
-        opacity: 0;
-    }
-    50% {
-        background:rgb(255, 0, 0);
-        box-shadow: 0 0 40px 40px #ff0000;
-    }
-    100%{
-        transform: rotate(360deg);
-        box-shadow: none;
-        background: #ff0000; 
-    }
+@keyframes sharingan_spin {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    background: var(--eye-sharingan);
+    box-shadow: 0 0 40px 40px #ff0000;
+  }
+  100% {
+    transform: rotate(360deg);
+    box-shadow: none;
+    background: var(--eye-sharingan);
+  }
 }
-
 
 .eye-inside::before {
   content: "";
@@ -122,15 +127,15 @@ body {
   left: calc(50% - 25px);
 
   border-radius: 50%;
-  border: 1px solid var(--eye-circle);
+  border: 1px solid var(--eye-black);
 }
 
 .eye-circle-inside {
   width: 20px;
   height: 20px;
-  background-color: var(--eye-circle);
+  background-color: var(--eye-black);
 
-  border: 3px solid var(--eye-circle);
+  border: 3px solid var(--eye-black);
   border-radius: 50%;
   position: relative;
 
@@ -142,7 +147,7 @@ body {
   position: absolute;
   width: 12px;
   height: 12px;
-  background-color: black;
+  background-color: var(--eye-black);
   border-radius: 50%;
   top: 17px;
   left: 42px;
@@ -155,7 +160,7 @@ body {
   left: -2px;
   width: 0.5em;
   height: 0.8em;
-  border-left: 12px solid black;
+  border-left: 12px solid var(--eye-black);
   border-radius: 100% 0 0 0;
   transform: rotate(345deg);
 }
@@ -164,7 +169,7 @@ body {
   position: absolute;
   width: 12px;
   height: 12px;
-  background-color: black;
+  background-color: var(--eye-black);
   border-radius: 50%;
   top: 55px;
   left: 20px;
@@ -177,7 +182,7 @@ body {
   left: -10px;
   width: 0.5em;
   height: 0.8em;
-  border-left: 12px solid black;
+  border-left: 12px solid var(--eye-black);
   border-radius: 100% 0 0 0;
   transform: rotate(225deg);
 }
@@ -186,7 +191,7 @@ body {
   position: absolute;
   width: 12px;
   height: 12px;
-  background-color: black;
+  background-color: var(--eye-black);
   border-radius: 50%;
   top: 55px;
   right: 19px;
@@ -199,11 +204,11 @@ body {
   left: -1px;
   width: 0.5em;
   height: 0.8em;
-  border-left: 12px solid black;
+  border-left: 12px solid var(--eye-black);
   border-radius: 100% 0 0 0;
   transform: rotate(470deg);
 }
 
-.left-eye{
+.left-eye {
   transform: scaleX(-1);
 }
