@@ -22,6 +22,8 @@ src > index.html
 <br/>
 <br/>
 <h1 align="center">Divirta-se ativando seu Sharingan</h1>
-```bash
-src > index.html
-```
+<p align="Center">
+    <img src="./src/assets/gifSharingan.gif" width="500" height="400" />
+</p>
+
+
