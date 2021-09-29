@@ -1,0 +1,197 @@
+:root {
+  --eye-red: #db0118;
+  --eye-tomoe: #000000;
+  --eye-circle: #000000;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+
+  background-color: rgb(255, 255, 255);
+}
+
+.container {
+  background-color: rgb(255, 255, 255);
+  max-width: 450px;
+  height: 450px;
+  margin: 50px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.box-eye {
+  height: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+}
+
+.eye {
+  background-color: white;
+  width: 250px;
+  height: 130px;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100% 10% 25% 36%/ 100% 2% 99% 15%;
+  box-shadow: -3px 2px 1px 3px rgb(7, 7, 7) inset;
+
+   animation: eye_animation 7s ease-in-out infinite;  
+
+  
+}
+
+/* @keyframes eye_animation {
+    0%, 36%, 55%, 100%{
+        height: 140px;
+        padding-top: 20px;
+    }
+    43%, 47%{
+        height: 120px;
+        padding-top: 0px;
+    }
+} */
+
+@keyframes eye_animation {
+    0%, 36%, 55%, 100%{
+        height: 140px;
+        padding-top: 20px;
+    }
+    43%, 47%, 55%, 60%, 80%, 90%, 100%{
+        height: 115px;
+        padding-top: 0px;
+    }
+}
+
+
+.eye-inside {
+    margin-top: 15px;
+  width: 100px;
+  height: 100px;
+  background-color: var(--eye-red);
+
+  border: 3px solid var(--eye-circle);
+  border-radius: 50%;
+  position: absolute;
+}
+
+.eye-inside:hover {
+    animation:spin 4s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        background:rgb(255, 0, 0);
+        box-shadow: 0 0 10px 10px #f03a3a;
+    }
+    100%{
+        transform: rotate(360deg);
+        box-shadow: none;
+        background: #000000;
+    }
+}
+
+
+.eye-inside::before {
+  content: "";
+  width: 50px;
+  height: 50px;
+
+  position: absolute;
+  top: calc(50% - 25px);
+  left: calc(50% - 25px);
+
+  border-radius: 50%;
+  border: 1px solid var(--eye-circle);
+}
+
+.eye-circle-inside {
+  width: 20px;
+  height: 20px;
+  background-color: var(--eye-circle);
+
+  border: 3px solid var(--eye-circle);
+  border-radius: 50%;
+  position: relative;
+
+  top: calc(68% - 25px);
+  left: calc(68% - 25px);
+}
+
+.tomoe1 {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background-color: black;
+  border-radius: 50%;
+  top: 17px;
+  left: 42px;
+}
+
+.tomoe1::before {
+  content: "";
+  position: absolute;
+  top: -7px;
+  left: -2px;
+  width: 0.5em;
+  height: 0.8em;
+  border-left: 12px solid black;
+  border-radius: 100% 0 0 0;
+  transform: rotate(345deg);
+}
+
+.tomoe2 {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background-color: black;
+  border-radius: 50%;
+  top: 55px;
+  left: 20px;
+}
+
+.tomoe2::before {
+  content: "";
+  position: absolute;
+  top: 1px;
+  left: -10px;
+  width: 0.5em;
+  height: 0.8em;
+  border-left: 12px solid black;
+  border-radius: 100% 0 0 0;
+  transform: rotate(225deg);
+}
+
+.tomoe3 {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background-color: black;
+  border-radius: 50%;
+  top: 55px;
+  right: 19px;
+}
+
+.tomoe3::before {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: -1px;
+  width: 0.5em;
+  height: 0.8em;
+  border-left: 12px solid black;
+  border-radius: 100% 0 0 0;
+  transform: rotate(470deg);
+}
